@@ -1,3 +1,6 @@
 [submodule "source/st"]
 	path = source/st
 	url = https://github.com/techno-sorcery/st
+[submodule "source/dwm"]
+	path = source/dwm
+	url = https://github.com/techno-sorcery/dwm
