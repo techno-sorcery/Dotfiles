@@ -1,0 +1,7 @@
+cli_base_stow:
+  - htop
+  - top
+
+gui_base_stow:
+  - rofi
+  - x-windows

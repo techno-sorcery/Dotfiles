@@ -1,0 +1,30 @@
+flatpak_base:
+  - com.github.tchx84.Flatseal
+
+flatpak_extras:
+
+  # Multimedia
+  - com.spotify.Client
+  - org.musicbrainz.Picard 
+
+  # Editing
+  - org.inkscape.Inkscape 
+  - org.kde.krita
+  - org.libreoffice.LibreOffice 
+  - org.shotcut.Shotcut
+  - org.tenacityaudio.Tenacity
+
+  # Gaming
+  - org.DolphinEmu.dolphin-emu
+  - org.libretro.RetroArch
+  - org.openttd.OpenTTD
+  - org.zdoom.GZDoom 
+
+  # Programming
+  - cc.arduino.IDE2
+  - com.github.corna.Vivado
+
+  # Other
+  - com.vivaldi.Vivaldi
+  - org.qbittorrent.qBittorrent
+  - org.signal.Signal

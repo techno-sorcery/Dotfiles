@@ -1,0 +1,77 @@
+- name: Hayden's automated Debian setup script
+  hosts: localhost
+
+  pre_tasks:
+
+    - name: Unstow programs
+      #shell: "for NAME in {{ playbook_dir }}/../config/*; do stow -d {{ playbook_dir }}/../config -t ~/ -D ${NAME#../config/}; done"
+      shell: "for NAME in {{ playbook_dir }}/../config/*; do echo ${NAME#../config/}; done"
+      ignore_errors: true
+
+    - name: Add non-free, contrib repos
+      become: true
+      replace:
+        path: /etc/apt/sources.list
+        regexp: '(non-free-firmware)$'
+        replace: 'contrib non-free'
+
+    - name: Upgrade package list
+      become: true
+      apt:
+        force_apt_get: true
+        update_cache: true
+        state: present
+
+    - name: Install prerequisite packages
+      become: yes
+      apt:
+        name:
+          - stow
+          - wget
+          - git
+        update_cache: true
+        state: present
+
+    - name: Make home directories
+      file:
+        path: "{{ lookup('env', 'HOME') }}/{{ item }}"
+        state: directory
+        mode: 0755
+      loop:
+        - "Documents"
+        - "Downloads"
+        - "Git"
+        - "Media"
+        - "Media/books"
+        - "Media/movies"
+        - "Media/music"
+        - "Media/pdfs"
+        - "Media/tv"
+        - "Photos"
+        - "Photos/screenshots"
+        - "School"
+        - "School/archive"
+
+
+
+    - name: Include variables
+      include_vars: "{{ item }}"
+      loop: "{{ query('fileglob', 'vars/*.yml') }}"
+
+  tasks:
+    - include: tasks/cli-base.yml
+    - include: tasks/cli-extras.yml
+    - include: tasks/gui-base.yml
+    - include: tasks/gui-extras.yml
+    - include: tasks/fonts.yml
+    - include: tasks/zsh.yml
+    # - include: tasks/nvim.yml
+    - include: tasks/flatpak.yml
+    - include: tasks/kjv.yml
+    # - include: tasks/base-install.yml
+    # - include: tasks/base-config.yml
+    # - include: tasks/suckless.yml
+    # - include: tasks/flatpak-install.yml
+    # - include: tasks/laptop.yml
+    # - include: tasks/fonts.yml
+    # - include: tasks/kjv.yml

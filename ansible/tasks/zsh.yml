@@ -1,0 +1,22 @@
+- name: Install zsh
+  become: true
+  apt:
+    name: zsh
+    state: present
+    tags:
+      - base
+      - zsh
+
+- name: Stow zsh config
+  shell: "stow --dotfiles --dir {{ playbook_dir }}/../config/zsh --target {{ ansible_env.HOME }}"
+  tags:
+    - base
+    - zsh
+
+- name: Set zsh as default shell
+  become: true
+  shell: "chsh -s /bin/zsh"
+  tags:
+    - base
+    - zsh
+

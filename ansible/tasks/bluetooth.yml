@@ -1,0 +1,9 @@
+- name: Install bluetooth utilities
+  become: true
+  package:
+    name:
+      - bluez
+      - bluez-tools
+      - pulseaudio-module-bluetooth
+  tags:
+    - bluetooth

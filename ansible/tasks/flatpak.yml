@@ -1,0 +1,27 @@
+- name: Install flatpak
+  become: true
+  package:
+    name:
+      - flatpak
+  tags:
+    - flatpak
+
+- name: Add flathub repo
+  become: true
+  shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  tags:
+    - flatpak
+
+- name: Install flatpak base
+  flatpak:
+    name: "{{ flatpak_base }}"
+  tags:
+    - flatpak
+    - flatpak-base
+
+- name: Install flatpak extras
+  flatpak:
+    name: "{{ flatpak_extras }}"
+  tags:
+    - flatpak
+    - flatpak-extras
