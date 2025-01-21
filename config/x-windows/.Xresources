@@ -30,10 +30,3 @@ dwm*gappiv: 6
 ! Theme
 Xcursor.theme: Adwaita
 Xcursor.size: 24
-
-
-! st appearance
-/* st*alpha: 0.60 */
-/* st*borderpx: 4 */
-/* st*minlatency: 2 */
-/* st*maxlatency: 15 */

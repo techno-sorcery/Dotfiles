@@ -13,3 +13,11 @@
   tags:
     - base
     - config
+
+- name: Set zsh as default shell
+  become: true
+  shell: "chsh -s /bin/zsh"
+  tags:
+    - base
+    - config
+    - zsh

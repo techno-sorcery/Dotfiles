@@ -14,12 +14,6 @@ flatpak_extras:
   - org.shotcut.Shotcut
   - org.tenacityaudio.Tenacity
 
-  # Gaming
-  - org.DolphinEmu.dolphin-emu
-  - org.libretro.RetroArch
-  - org.openttd.OpenTTD
-  - org.zdoom.GZDoom 
-
   # Programming
   - cc.arduino.IDE2
   - com.github.corna.Vivado

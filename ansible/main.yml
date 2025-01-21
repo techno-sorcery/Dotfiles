@@ -6,14 +6,26 @@
     - name: Unstow programs
       #shell: "for NAME in {{ playbook_dir }}/../config/*; do stow -d {{ playbook_dir }}/../config -t ~/ -D ${NAME#../config/}; done"
       shell: "for NAME in {{ playbook_dir }}/../config/*; do echo ${NAME#../config/}; done"
-      ignore_errors: true
+      ignore_errors: false
 
-    - name: Add non-free, contrib repos
+    - name: Copy repo template
+      vars:
+        apt_components: main contrib non-free non-free-firmware
       become: true
-      replace:
-        path: /etc/apt/sources.list
-        regexp: '(non-free-firmware)$'
-        replace: 'contrib non-free'
+      copy:
+        dest: /etc/apt/sources.list
+        mode: 0644
+        owner: root
+        group: root
+        content: |
+          deb http://deb.debian.org/debian/ {{ ansible_distribution_release }} {{ apt_components }}
+          deb-src http://deb.debian.org/debian/ {{ ansible_distribution_release }} {{ apt_components }}
+
+          deb http://security.debian.org/debian-security {{ ansible_distribution_release }}-security {{ apt_components }}
+          deb-src http://security.debian.org/debian-security {{ ansible_distribution_release }}-security {{ apt_components }}
+
+          deb http://deb.debian.org/debian/ {{ ansible_distribution_release }}-updates {{ apt_components }}
+          deb-src http://deb.debian.org/debian/ {{ ansible_distribution_release }}-updates {{ apt_components }}
 
     - name: Upgrade package list
       become: true
@@ -52,8 +64,6 @@
         - "School"
         - "School/archive"
 
-
-
     - name: Include variables
       include_vars: "{{ item }}"
       loop: "{{ query('fileglob', 'vars/*.yml') }}"
@@ -63,15 +73,6 @@
     - include: tasks/cli-extras.yml
     - include: tasks/gui-base.yml
     - include: tasks/gui-extras.yml
-    - include: tasks/fonts.yml
-    - include: tasks/zsh.yml
-    # - include: tasks/nvim.yml
-    - include: tasks/flatpak.yml
+    - include: tasks/bluetooth.yml
+    # - include: tasks/flatpak.yml
     - include: tasks/kjv.yml
-    # - include: tasks/base-install.yml
-    # - include: tasks/base-config.yml
-    # - include: tasks/suckless.yml
-    # - include: tasks/flatpak-install.yml
-    # - include: tasks/laptop.yml
-    # - include: tasks/fonts.yml
-    # - include: tasks/kjv.yml

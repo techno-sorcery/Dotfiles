@@ -38,6 +38,7 @@ cli_extras_packages:
   - gdb
   - gnuplot
   - neofetch
+  - npm
   - orpie
   - pandoc
   - texlive-full
@@ -86,5 +87,5 @@ gui_base_packages:
 
 gui_extras_packages:
   - mpv
-  - zathura
   - wine
+  - zathura

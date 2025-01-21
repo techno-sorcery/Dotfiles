@@ -2,7 +2,7 @@
 
 # Misc
 export MAIN_USER="$USER"
-export BG="/home/technomancer/Photos/wallpapers/ImageHandler-8.png"
+export BG="/home/technomancer/Photos/wallpapers/antwerp_cathedral.jpg"
 
 # Programs
 export EDITOR="nvim"

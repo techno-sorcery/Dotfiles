@@ -13,3 +13,21 @@
   tags:
     - gui
     - config
+
+- name: Create .fonts symlink
+  file:
+    src: "{{ playbook_dir }}/../files/.fonts"
+    dest: "~/.fonts"
+    force: true
+    state: link
+  tags:
+    - gui
+    - config
+    - fonts
+
+- name: Rebuild font cache
+  shell: "fc-cache -f -v"
+  tags:
+    - gui
+    - confi
+    - fonts

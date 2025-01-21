@@ -1,6 +1,8 @@
 cli_base_stow:
   - htop
+  - nvim
   - top
+  - zsh
 
 gui_base_stow:
   - rofi

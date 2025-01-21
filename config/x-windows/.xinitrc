@@ -8,7 +8,7 @@
 #. /etc/X11/Xsession
 
 compton --vsync opengl-swc --backend glx &
-hsetroot -tile $BG
+hsetroot -fill $BG
 xss-lock -- i3lock -i /home/$USER/Photos/wallpapers/ibm.png -t &
 xrdb -merge  ~/.Xresources
 numlockx on
