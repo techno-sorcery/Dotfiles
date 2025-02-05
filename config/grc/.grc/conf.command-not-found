@@ -1,0 +1,6 @@
+# Main HD
+regexp='[^']*'
+colours=bold red
+======
+regexp=^sudo.*
+colours=green

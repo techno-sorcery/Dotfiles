@@ -13,6 +13,7 @@ hi Type ctermfg=75 guifg=#5fafff
 hi Special ctermfg=153 guifg=#afd7ff
 hi Title ctermfg=231 guifg=#ffffff
 hi Comment ctermfg=71 guifg=#5faf5f
+hi SignColumn guibg=none
 
 " LSP semantic highlighting
 hi @lsp.type.variable guifg=#afd7ff
@@ -30,10 +31,15 @@ hi Question ctermfg=190 guifg=#d7ff00
 hi SpecialKey ctermfg=81 guifg=#5fd7ff
 hi Directory ctermfg=81 guifg=#5fd7ff
 
+" TabLine
+hi TabLineFill guifg=#262626
+hi TabLine guibg=#303030 gui=none
+hi TabLineSel guibg=#0a7aca
+
 " Spellbad
 hi clear SpellBad
 hi SpellBad gui=undercurl
-hi SpellBad ctermbg=1 guisp=#af0000
+" hi SpellBad ctermbg=1 guisp=#af0000
 
 " Error checking
 hi DiagnosticUnderlineError gui=undercurl
@@ -50,3 +56,8 @@ hi CursorLineNR ctermbg=236 guibg=#303030
 " Blankline Indent
 hi IndentBlanklineChar ctermfg=241 guifg=#626262
 hi IndentBlanklineSpaceChar ctermfg=241 guifg=#626262
+
+" GitSign
+hi GitSignsAdd ctermfg=2 guifg=green
+hi GitSignsChange ctermfg=5 guifg=purple
+hi GitSignsDelete ctermfg=9 guifg=red

@@ -9,6 +9,7 @@ cli_base_packages:
   - fzf
   - gcc
   - git
+  - grc
   - htop
   - libtool
   - lm-sensors

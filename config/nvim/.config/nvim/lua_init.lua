@@ -37,8 +37,12 @@ vim.opt.formatoptions = "c"
 vim.opt.formatoptions = "r"
 vim.opt.formatoptions = "o"
 
--- Goyo
-vim.g["goyo_width"] = 115                           -- Width of goyo window
+
+-- Keybinds
+vim.keymap.set("c", "<cr>", function()
+  if vim.fn.pumvisible() == 1 then return '<c-y>' end
+  return '<cr>'
+  end, { expr = true })
 
 
 -- Matchparen
@@ -47,7 +51,6 @@ vim.g['matchparen_insert_timeout'] = 10
 
 
 -- Vim airline
-vim.g['airline#extensions#tabline#enabled '] = 1    -- Enable fancy tabline
 vim.g['airline_powerline_fonts'] = 1                -- Use powerline fonts
 vim.g['airline_theme'] = "codedark"                 -- Use VSCode dark theme
 
@@ -55,7 +58,7 @@ vim.g['airline_theme'] = "codedark"                 -- Use VSCode dark theme
 -- Bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-   vim.fn.system({
+    vim.fn.system({
         "git",
         "clone",
         "--filter=blob:none",
@@ -70,41 +73,34 @@ vim.opt.rtp:prepend(lazypath)
 -- Config and use lazy
 require("lazy").setup({
 
-    -- Treesitter
-    -- "nvim-treesitter/nvim-treesitter",
-    -- "hiphish/rainbow-delimiters.nvim",
-
-    -- Lsp stuff
+    -- LSP
     "VonHeikemen/lsp-zero.nvim",
     "neovim/nvim-lspconfig",
-    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    "williamboman/mason.nvim",
 
     -- Autocomplete
+    "f3fora/cmp-spell",                 -- Spell suggestion autocomplete source
+    "hrsh7th/cmp-buffer",               -- Buffer autocomplete source
+    "hrsh7th/cmp-calc",                 -- Calculator autocomplete source
+    "hrsh7th/cmp-nvim-lsp",             -- LSP autocomplete source
+    "hrsh7th/cmp-path",                 -- Filepath autocomplete source
     "hrsh7th/nvim-cmp",
     "onsails/lspkind.nvim",
-    "hrsh7th/cmp-nvim-lsp",             -- LSP autocomplete source
-    "hrsh7th/cmp-buffer",               -- Buffer autocomplete source
-    "hrsh7th/cmp-path",                 -- Filepath autocomplete source
     "saadparwaiz1/cmp_luasnip",         -- LuaSnip autocomplete source
-    "hrsh7th/cmp-calc",                 -- Calculator autocomplete source
-    "f3fora/cmp-spell",                 -- Spell suggestion autocomplete source
 
     -- Snippets
     "L3MON4D3/LuaSnip",                 -- Snippet plugin
     "rafamadriz/friendly-snippets",     -- Snippets for common languages
 
-    -- Tree
-    "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",                 -- UI Toolkit
-    "nvim-neo-tree/neo-tree.nvim",          -- File tree
-
+    -- Git
+    "lewis6991/gitsigns.nvim",              -- Git decorations
+    "tpope/vim-fugitive",                   -- Git integration
 
     -- Misc
     "brenoprata10/nvim-highlight-colors",   -- Color previews
-    "junegunn/goyo.vim",                    -- Comfortable formatting
+    "folke/which-key.nvim",                 -- Pop-up for custom keybinds
     "lukas-reineke/indent-blankline.nvim",  -- Indentation lines
-    "mg979/vim-visual-multi",               -- Multi-cursor editing
     "nvim-tree/nvim-web-devicons",          -- Icon pack
     "stevearc/oil.nvim",                    -- File browser in buffer
     "tomasiser/vim-code-dark",              -- VS Code theme
@@ -112,9 +108,75 @@ require("lazy").setup({
     "tpope/vim-surround",                   -- Change parentheses/quotes/etc
     "vim-airline/vim-airline",              -- Improved status bar
     "windwp/nvim-autopairs",                -- Pair parentheses and brackets
-    "folke/which-key.nvim",                 -- Pop-up for custom keybinds
+    "petertriho/nvim-scrollbar",        -- Status scrollbar
+
+    -- AutoSession
+    {
+        'rmagatti/auto-session',
+        lazy = false,
+
+        ---enables autocomplete for opts
+        ---@module "auto-session"
+        ---@type AutoSession.Config
+        opts = {
+            suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+            -- log_level = 'debug',
+        }
+    }
 })
 
+
+-- Set up gitsigns
+require('gitsigns').setup {
+    signs = {
+        add          = { text = '┃' },
+        change       = { text = '┃' },
+        delete       = { text = '▁' },
+        topdelete    = { text = '▔' },
+        changedelete = { text = '~' },
+        untracked    = { text = '┆' },
+    },
+    signs_staged = {
+        add          = { text = '┃' },
+        change       = { text = '┃' },
+        delete       = { text = '▁' },
+        topdelete    = { text = '▔' },
+        changedelete = { text = '~' },
+        untracked    = { text = '┆' },
+    },
+    signs_staged_enable = true,
+    signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+    numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
+    linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
+    word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
+    watch_gitdir = {
+        follow_files = true
+    },
+    auto_attach = true,
+    attach_to_untracked = false,
+    current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+    current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+        delay = 1000,
+        ignore_whitespace = false,
+        virt_text_priority = 100,
+        use_focus = true,
+    },
+    current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
+    sign_priority = 1,
+    update_debounce = 100,
+    status_formatter = nil, -- Use default
+    max_file_length = 40000, -- Disable if file is longer than this (in lines)
+    preview_config = {
+        -- Options passed to nvim_open_win
+        border = 'single',
+        style = 'minimal',
+        relative = 'cursor',
+        row = 0,
+        col = 1
+    },
+}
 
 -- Set up which-key
 require("which-key").setup();
@@ -122,25 +184,25 @@ require("which-key").setup();
 
 -- Set up nvim highlight colors
 require("nvim-highlight-colors").setup {
-	---Render style
-	render = 'virtual',
-	virtual_symbol = '⯀',
+    ---Render style
+    render = 'virtual',
+    virtual_symbol = '⯀',
 
-	---Set virtual symbol position()
-	virtual_symbol_position = 'inline',
-	enable_hex = true,
-	enable_short_hex = true,
-	enable_rgb = true,
-	enable_hsl = true,
-	enable_var_usage = true,
-	enable_named_colors = true,
-	enable_tailwind = false,
+    ---Set virtual symbol position()
+    virtual_symbol_position = 'inline',
+    enable_hex = true,
+    enable_short_hex = true,
+    enable_rgb = true,
+    enable_hsl = true,
+    enable_var_usage = true,
+    enable_named_colors = true,
+    enable_tailwind = false,
 
-	---Set custom colors
-	custom_colors = {
-		{ label = '%-%-theme%-primary%-color', color = '#0f1219' },
-		{ label = '%-%-theme%-secondary%-color', color = '#5a5d64' },
-	},
+    ---Set custom colors
+    custom_colors = {
+        { label = '%-%-theme%-primary%-color', color = '#0f1219' },
+        { label = '%-%-theme%-secondary%-color', color = '#5a5d64' },
+    },
 
     exclude_filetypes = {},
     exclude_buftypes = {}
@@ -164,8 +226,8 @@ require("ibl").setup({
 
 
 -- Disable new line comments
--- vim.cmd('autocmd BufEnter * set formatoptions-=cro')
--- vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
 
 -- Setup LSP zero
@@ -236,7 +298,7 @@ cmp.setup({
     -- Snippets support
     snippet = {
         expand = function(args)
-          require('luasnip').lsp_expand(args.body)
+            require('luasnip').lsp_expand(args.body)
         end,
     },
 
@@ -271,21 +333,6 @@ vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link='CmpItemKindKeyword' })
 vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link='CmpItemKindKeyword' })
 
 
--- Neotree
-require("neo-tree").setup({
-    window = {
-        position = "right",
-        width = 25,
-    }
-})
-
-
--- require'nvim-treesitter.configs'.setup {
---     ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
---     sync_install = false,
---     auto_install = true,
-
---     highlight = {
---         enable = true,
---     },
--- }
+-- Set up scrollbar
+require("scrollbar").setup()
+require("scrollbar.handlers.gitsigns").setup()

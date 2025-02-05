@@ -9,9 +9,6 @@ alias top='htop'
 alias apt-get='apt'
 alias vim='~/.local/bin/nvim.appimage'
 alias nvim='~/.local/bin/nvim.appimage'
-# alias cdda='~/Documents/execs/catapult-linux-x64-23.12a'
-# alias dolphin='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia flatpak run org.DolphinEmu.dolphin-emu '
-# alias rars='java -jar ~/Documents/execs/rars1_6.jar'
 
 alias flac2mp3='find * -depth -name "*.flac" -exec ffmpeg -i {} -codec:a libmp3lame -b:a 320k {}.mp3 \;'
 alias m4a2mp3=' find * -depth -name "*.m4a" -exec ffmpeg -i {} -codec:a libmp3lame -b:a 320k {}.mp3 \;'
@@ -20,9 +17,5 @@ alias m4a2mp3=' find * -depth -name "*.m4a" -exec ffmpeg -i {} -codec:a libmp3la
 
 alias dict='dict -d wn'
 alias diff='diff --color'
-alias thes='dict -d moby-thesaurus'
 
 alias calpoly='ssh hbuscher@unix5.csc.calpoly.edu'
-
-alias weather='$HOME/Scripts/technobar/weather.sh'
-alias crypto='$HOME/Scripts/technobar/crypto.sh'

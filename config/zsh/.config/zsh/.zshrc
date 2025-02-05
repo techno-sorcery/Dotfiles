@@ -65,44 +65,12 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # Prompt string
 PS1='%B%F{10}%n%f%b:%F{12}%~%f$ '
+# PS1='%F{10}%~%f > '
 RPROMPT='$GITSTATUS_PROMPT  %(?.%F{10}✓%f.%F{9}X%f)'
 
 
 # Source other config files
-source "$ZDOTDIR/autorun"
-source "$ZDOTDIR/aliases"
-
-
-# Custom functions
-cdls() {
-  cd "$1" && ls
-}
-
-
-# Changes cursor to indicate Vim mode
-cursor_mode() {
-    # See https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html for cursor shapes
-    cursor_block='\e[2 q'
-    cursor_beam='\e[6 q'
-
-    function zle-keymap-select {
-        if [[ ${KEYMAP} == vicmd ]] ||
-            [[ $1 = 'block' ]]; then
-            echo -ne $cursor_block
-        elif [[ ${KEYMAP} == main ]] ||
-            [[ ${KEYMAP} == viins ]] ||
-            [[ ${KEYMAP} = '' ]] ||
-            [[ $1 = 'beam' ]]; then
-            echo -ne $cursor_beam
-        fi
-    }
-
-    zle-line-init() {
-        echo -ne $cursor_beam
-    }
-
-    zle -N zle-keymap-select
-    zle -N zle-line-init
-}
-
-cursor_mode
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+source "$ZDOTDIR/zautorun.zsh"
+source "$ZDOTDIR/zaliases.zsh"
+source "$ZDOTDIR/zfuncts.zsh"
