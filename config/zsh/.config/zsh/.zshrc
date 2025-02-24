@@ -4,10 +4,17 @@
     https://github.com/marlonrichert/zsh-snap.git $ZDOTDIR/plugins/znap
     source $ZDOTDIR/plugins/znap/znap.zsh 
 
+
+# zsh-nvm lazy loading
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+
+
 # Plugins
 znap source zdharma-continuum/fast-syntax-highlighting
 znap source hlissner/zsh-autopair
 znap source zsh-users/zsh-autosuggestions
+znap source lukechilds/zsh-nvm
 znap clone romkatv/gitstatus
 
 source "/usr/share/doc/fzf/examples/completion.zsh"
@@ -56,7 +63,6 @@ setopt CHASE_LINKS
 setopt LIST_TYPES
 setopt AUTO_CD
 
-
 stty stop undef             # Disable terminal freeze via ^s
 
 alias d='dirs -v'
@@ -65,7 +71,6 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 # Prompt string
 PS1='%B%F{10}%n%f%b:%F{12}%~%f$ '
-# PS1='%F{10}%~%f > '
 RPROMPT='$GITSTATUS_PROMPT  %(?.%F{10}✓%f.%F{9}X%f)'
 
 
@@ -74,3 +79,4 @@ RPROMPT='$GITSTATUS_PROMPT  %(?.%F{10}✓%f.%F{9}X%f)'
 source "$ZDOTDIR/zautorun.zsh"
 source "$ZDOTDIR/zaliases.zsh"
 source "$ZDOTDIR/zfuncts.zsh"
+

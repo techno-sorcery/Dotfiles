@@ -98,6 +98,7 @@ require("lazy").setup({
     "tpope/vim-fugitive",                   -- Git integration
 
     -- Misc
+    "junegunn/fzf.vim",                     -- Fuzzy finding
     "brenoprata10/nvim-highlight-colors",   -- Color previews
     "folke/which-key.nvim",                 -- Pop-up for custom keybinds
     "lukas-reineke/indent-blankline.nvim",  -- Indentation lines
@@ -110,20 +111,22 @@ require("lazy").setup({
     "windwp/nvim-autopairs",                -- Pair parentheses and brackets
     "petertriho/nvim-scrollbar",        -- Status scrollbar
 
-    -- AutoSession
+    -- Sessionizer
     {
-        'rmagatti/auto-session',
-        lazy = false,
-
-        ---enables autocomplete for opts
-        ---@module "auto-session"
-        ---@type AutoSession.Config
-        opts = {
-            suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
-            -- log_level = 'debug',
+        "xolox/vim-session",
+        dependencies = {
+            "xolox/vim-misc",
         }
-    }
+
+    },
 })
+
+
+-- Config vim-session
+vim.g['session_directory'] = '~/.cache/nvim/sessions'    -- Session directory
+vim.g['session_autosave'] = 'no'                         -- Don't autosave sessions
+vim.g['session_default_to_last'] = 1
+vim.g['session_command_aliases'] = 1
 
 
 -- Set up gitsigns
