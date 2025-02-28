@@ -1,10 +1,8 @@
 -- Basic config
 
--- vim.opt.termguicolors = true
 vim.opt.number = true                   -- Show line number
 vim.opt.cul = true                      -- Show cursor line
 
--- vim.opt.foldmethod = "indent"           -- Fold matching indent levels
 vim.opt.lazyredraw = true               -- Wait to redraw screen
 vim.cmd [[colorscheme cool]]            -- Set theme to custom
 
@@ -24,25 +22,27 @@ vim.opt.hlsearch = true                 -- Automatically highlight
 vim.opt.showcmd = true                  -- Show last command on status
 vim.opt.showmode = true                 -- Show current mode on status
 
-vim.opt.dir = "/home/" .. os.getenv("USER") .. "/.cache/nvim"           -- Set swapfile directory
-vim.opt.bdir = "/home/".. os.getenv("USER") .."/.cache/nvim"          -- Set backup file directory
+vim.opt.dir = "/home/" .. os.getenv("USER") .. "/.cache/nvim"       -- Set swapfile directory
+vim.opt.bdir = "/home/".. os.getenv("USER") .."/.cache/nvim"        -- Set backup file directory
 
 vim.opt.history = 500                   -- Remember 500 last commands
 vim.opt.scrolloff = 10                  -- Lines to pad cursor
 
 vim.opt.undofile = true                 -- Save undo history to file
-vim.opt.undodir = "/home/".. os.getenv("USER") .."/.cache/nvim"       -- Set undo file directory
+vim.opt.undodir = "/home/".. os.getenv("USER") .."/.cache/nvim"     -- Set undo file directory
 
 vim.opt.formatoptions = "c"
 vim.opt.formatoptions = "r"
 vim.opt.formatoptions = "o"
 
+vim.opt.equalalways = false             -- Preserve buffer sizes after resize
+
 
 -- Keybinds
 vim.keymap.set("c", "<cr>", function()
-  if vim.fn.pumvisible() == 1 then return '<c-y>' end
-  return '<cr>'
-  end, { expr = true })
+    if vim.fn.pumvisible() == 1 then return '<c-y>' end
+    return '<cr>'
+end, { expr = true })
 
 
 -- Matchparen
@@ -51,8 +51,8 @@ vim.g['matchparen_insert_timeout'] = 10
 
 
 -- Vim airline
-vim.g['airline_powerline_fonts'] = 1                -- Use powerline fonts
-vim.g['airline_theme'] = "codedark"                 -- Use VSCode dark theme
+vim.g['airline_powerline_fonts'] = 1        -- Use powerline fonts
+vim.g['airline_theme'] = "codedark"         -- Use VSCode dark theme
 
 
 -- Bootstrap lazy
@@ -80,36 +80,36 @@ require("lazy").setup({
     "williamboman/mason.nvim",
 
     -- Autocomplete
-    "f3fora/cmp-spell",                 -- Spell suggestion autocomplete source
-    "hrsh7th/cmp-buffer",               -- Buffer autocomplete source
-    "hrsh7th/cmp-calc",                 -- Calculator autocomplete source
-    "hrsh7th/cmp-nvim-lsp",             -- LSP autocomplete source
-    "hrsh7th/cmp-path",                 -- Filepath autocomplete source
+    "f3fora/cmp-spell",                     -- Spell suggestion autocomplete source
+    "hrsh7th/cmp-buffer",                   -- Buffer autocomplete source
+    "hrsh7th/cmp-calc",                     -- Calculator autocomplete source
+    "hrsh7th/cmp-nvim-lsp",                 -- LSP autocomplete source
+    "hrsh7th/cmp-path",                     -- Filepath autocomplete source
     "hrsh7th/nvim-cmp",
     "onsails/lspkind.nvim",
-    "saadparwaiz1/cmp_luasnip",         -- LuaSnip autocomplete source
+    "saadparwaiz1/cmp_luasnip",             -- LuaSnip autocomplete source
 
     -- Snippets
-    "L3MON4D3/LuaSnip",                 -- Snippet plugin
-    "rafamadriz/friendly-snippets",     -- Snippets for common languages
+    "L3MON4D3/LuaSnip",                     -- Snippet plugin
+    "rafamadriz/friendly-snippets",         -- Snippets for common languages
 
     -- Git
     "lewis6991/gitsigns.nvim",              -- Git decorations
     "tpope/vim-fugitive",                   -- Git integration
 
     -- Misc
-    "junegunn/fzf.vim",                     -- Fuzzy finding
     "brenoprata10/nvim-highlight-colors",   -- Color previews
     "folke/which-key.nvim",                 -- Pop-up for custom keybinds
+    "junegunn/fzf.vim",                     -- Fuzzy finding
     "lukas-reineke/indent-blankline.nvim",  -- Indentation lines
     "nvim-tree/nvim-web-devicons",          -- Icon pack
+    "petertriho/nvim-scrollbar",            -- Status scrollbar
     "stevearc/oil.nvim",                    -- File browser in buffer
     "tomasiser/vim-code-dark",              -- VS Code theme
     "tpope/vim-commentary",                 -- Selection commenting
     "tpope/vim-surround",                   -- Change parentheses/quotes/etc
     "vim-airline/vim-airline",              -- Improved status bar
     "windwp/nvim-autopairs",                -- Pair parentheses and brackets
-    "petertriho/nvim-scrollbar",        -- Status scrollbar
 
     -- Sessionizer
     {
@@ -337,5 +337,13 @@ vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link='CmpItemKindKeyword' })
 
 
 -- Set up scrollbar
-require("scrollbar").setup()
-require("scrollbar.handlers.gitsigns").setup()
+require("scrollbar").setup({
+    handlers = {
+        cursor = true,
+        diagnostic = true,
+        gitsigns = true, -- Requires gitsigns
+        handle = true,
+        search = false, -- Requires hlslens
+        ale = false, -- Requires ALE
+    },
+})

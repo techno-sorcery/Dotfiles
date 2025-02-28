@@ -4,7 +4,8 @@
 static const Block blocks[] = {
 	/*Delim?*/      /*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 	{1,             "",	"tb-cpu",	        1,	    7},
-	{1,             "",	"tb-thermal",	    2,	    3},
+	{1,             "",	"tb-tmux",	        2,	    3},
+	/* {1,             "",	"tb-thermal",	    2,	    3}, */
 	/* {1,             "",	"tb-memory",	    2,	    6}, */
 	/* {1,             "",	"tb-disk",	    2,	    3}, */
 	{1,             "",	"tb-network",	    5,	    11},

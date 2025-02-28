@@ -79,4 +79,3 @@ RPROMPT='$GITSTATUS_PROMPT  %(?.%F{10}✓%f.%F{9}X%f)'
 source "$ZDOTDIR/zautorun.zsh"
 source "$ZDOTDIR/zaliases.zsh"
 source "$ZDOTDIR/zfuncts.zsh"
-
