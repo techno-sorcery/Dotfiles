@@ -1,9 +1,15 @@
 cli_base_stow:
+  - bash
+  - grc
   - htop
   - nvim
+  - scripts
+  - tmux
   - top
   - zsh
 
 gui_base_stow:
+  - mpd
+  - picom
   - rofi
   - x-windows

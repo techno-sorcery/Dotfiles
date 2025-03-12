@@ -7,13 +7,12 @@
 # invoke global X session script
 #. /etc/X11/Xsession
 
-compton --vsync opengl-swc --backend glx &
-hsetroot -fill $BG
-xss-lock -- i3lock -i /home/$USER/Photos/wallpapers/ibm.png -t &
+xss-lock -- i3lock -i /home/$USER/Photos/wallpapers/thinkchad.png -t &
 xrdb -merge  ~/.Xresources
 numlockx on
 setxkbmap -option caps:swapescape
 dwmblocks &
 st &
 caffeine &
+autorandr -c
 exec dbus-run-session -- dwm

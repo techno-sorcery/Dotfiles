@@ -49,7 +49,6 @@ gui_base_packages:
   - alsa-utils
   - arandr
   - autorandr
-  - compton
   - feh
   - fonts-noto-color-emoji
   - i3lock
@@ -67,6 +66,7 @@ gui_base_packages:
   - libxtst-dev
   - numlockx
   - pavucontrol
+  - picom
   - pulseaudio
   - pulseaudio-module-bluetooth
   - pulsemixer

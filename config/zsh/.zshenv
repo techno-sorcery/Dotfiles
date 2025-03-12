@@ -27,3 +27,6 @@ export SAVEHIST=1000
 export XDG_DATA_DIRS="/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share"
 export PATH="$PATH:/home/$USER/.local/bin"
 export DMENU_PATH="/usr/share/applications"
+
+# Add all directories in `~/.local/bin` to $PATH (Stolen from Luke Smith)
+export PATH="$PATH:$(find ~/.local/bin -type l | paste -sd ':' -)"

@@ -74,5 +74,5 @@
     - include: tasks/gui-base.yml
     - include: tasks/gui-extras.yml
     - include: tasks/bluetooth.yml
-    # - include: tasks/flatpak.yml
+    - include: tasks/flatpak.yml
     - include: tasks/kjv.yml
