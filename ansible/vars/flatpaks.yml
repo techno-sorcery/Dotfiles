@@ -22,3 +22,4 @@ flatpak_extras:
   - com.vivaldi.Vivaldi
   - org.qbittorrent.qBittorrent
   - org.signal.Signal
+  - us.zoom.Zoom
