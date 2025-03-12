@@ -1,0 +1,2 @@
+#!/bin/bash
+find * -depth -name "*.flac" -exec sh -c 'exec ffmpeg -i "$1" -codec:a libmp3lame -b:a 320k "${1%.flac}.mp3"' _ {} \;
