@@ -13,6 +13,5 @@ numlockx on
 setxkbmap -option caps:swapescape
 dwmblocks &
 st &
-caffeine &
 autorandr -c
 exec dbus-run-session -- dwm

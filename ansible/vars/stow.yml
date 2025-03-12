@@ -10,6 +10,7 @@ cli_base_stow:
 
 gui_base_stow:
   - autorandr
+  - fonts
   - mpd
   - picom
   - rofi

@@ -1,10 +1,12 @@
 cli_base_packages:
   - ansible
+  - apt-file
   - atool
   - autoconf
   - bc
   - curl
   - default-jre
+  - exfat-fuse
   - ffmpeg
   - fzf
   - gcc
@@ -16,7 +18,8 @@ cli_base_packages:
   - make
   - man
   - ncal
-  - neovim
+  - ntfs-3g
+  - vim
   - network-manager
   - p7zip-full
   - pass
@@ -32,6 +35,7 @@ cli_base_packages:
 
 cli_extras_packages:
   - cowsay
+  - bsdgames
   - dict-gcide
   - dict-wn
   - dictd
@@ -39,11 +43,14 @@ cli_extras_packages:
   - gdb
   - gnuplot
   - neofetch
+  - newsboat
   - npm
   - orpie
   - pandoc
+  - python3-matplotlib
   - texlive-full
   - valgrind
+  - vite
 
 gui_base_packages:
   - alsa-utils
@@ -51,6 +58,7 @@ gui_base_packages:
   - autorandr
   - feh
   - fonts-noto-color-emoji
+  - hsetroot
   - i3lock
   - libsdl2-image-2.0-0 
   - libsdl2-mixer-2.0-0
@@ -87,6 +95,9 @@ gui_base_packages:
   - xutils-dev
 
 gui_extras_packages:
+  - cups
   - mpv
+  - mpd
+  - ncmpcpp
   - wine
   - zathura
