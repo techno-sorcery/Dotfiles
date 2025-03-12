@@ -1,0 +1,6 @@
+#!/bin/sh
+pkill picom
+pkill xcompmgr
+xcompmgr &
+light -S 100
+hsetroot -fill $BG
