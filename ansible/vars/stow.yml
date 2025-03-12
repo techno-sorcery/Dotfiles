@@ -9,6 +9,7 @@ cli_base_stow:
   - zsh
 
 gui_base_stow:
+  - autorandr
   - mpd
   - picom
   - rofi
