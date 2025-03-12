@@ -1,0 +1,11 @@
+! Display
+Xft.dpi: 90
+
+! dwm appearance
+*user_bh: 2
+
+! rofi
+*rofifont: Terminus 9
+
+! Cursor
+Xcursor.size: 12

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Tmux
+icon1="🗔"
+
+if tmux has-session 2>/dev/null; then
+    sessions="$(tmux list-sessions | wc -l)"
+else
+    sessions="0"
+fi
+
+
+# Output
+echo $icon1 $sessions
