@@ -34,8 +34,9 @@ cli_base_packages:
   - zsh
 
 cli_extras_packages:
-  - cowsay
+  - alsa-utils
   - bsdgames
+  - cowsay
   - dict-gcide
   - dict-wn
   - dictd
@@ -50,13 +51,14 @@ cli_extras_packages:
   - npm
   - orpie
   - pandoc
+  - pulseaudio
+  - pulsemixer
   - python3-matplotlib
   - texlive-full
   - valgrind
   - vite
 
 gui_base_packages:
-  - alsa-utils
   - arandr
   - autorandr
   - feh
@@ -78,9 +80,6 @@ gui_base_packages:
   - numlockx
   - pavucontrol
   - picom
-  - pulseaudio
-  - pulseaudio-module-bluetooth
-  - pulsemixer
   - rofi
   - scrot
   - unifont

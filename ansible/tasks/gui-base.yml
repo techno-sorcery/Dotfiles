@@ -12,11 +12,8 @@
   loop: "{{ gui_base_stow }}"
   tags:
     - gui
-    - config
 
 - name: Rebuild font cache
   shell: "fc-cache -f -v"
   tags:
     - gui
-    - confi
-    - fonts

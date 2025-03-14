@@ -12,4 +12,3 @@
   loop: "{{ cli_extras_stow }}"
   tags:
     - extras
-    - config

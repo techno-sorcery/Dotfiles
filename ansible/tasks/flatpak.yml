@@ -5,12 +5,14 @@
       - flatpak
   tags:
     - flatpak
+    - flatpak-base
 
 - name: Add flathub repo
   become: true
   shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   tags:
     - flatpak
+    - flatpak-base
 
 - name: Install flatpak base
   flatpak:
