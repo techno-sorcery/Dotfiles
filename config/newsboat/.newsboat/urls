@@ -1,0 +1,46 @@
+---------------
+---Newsfeeds---
+---------------
+https://ktla.com/feed/                                      news
+
+https://distrowatch.com/news/dw.xml                         tech linux
+https://www.debian.org/News/news                            tech linux
+https://bits.debian.org/feeds/atom.xml                      tech linux
+https://planet.debian.org/rss20.xml                         tech linux
+https://feeds.macrumors.com/MacRumors-All                   tech
+https://www.linuxjournal.com/node/feed                      tech linux
+https://rss.slashdot.org/Slashdot/slashdotLinux             tech linux
+http://xahlee.info/comp/blog.xml                            tech linux
+
+https://lukesmith.xyz/rss.xml                               personal tech linux
+
+https://reporter.lcms.org/feed/                             "~LCMS Reporter" religion
+https://witness.lcms.org/feed/                              religion
+https://reporter.lcms.org/category/lcms-notices/feed/       religion
+https://www.usccb.org/news.rss                              religion
+https://feeds.feedburner.com/catholicnewsagency/dailynews   religion
+https://shop.catholic.com/rss.php?action=newblogs&type=rss  religion
+
+
+---------------
+----YouTube----
+---------------
+https://youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA youtube "~YT: Luke Smith" tech linux religion
+https://youtube.com/feeds/videos.xml?channel_id=UCHdpnvKJDijKNe2caIasnww youtube "~YT: Garbage Time" tech
+https://youtube.com/feeds/videos.xml?channel_id=UCufzX8bG4LkzqKEm7J7W7UA youtube "~YT: The Drum Thing" tech
+https://youtube.com/feeds/videos.xml?channel_id=UC7Jwj9fkrf1adN4fMmTkpug youtube "~YT: DankPods" tech
+https://youtube.com/feeds/videos.xml?channel_id=UCshVweYiHqrepiq6b8tWvLQ youtube "~YT: Janus Cycle" tech
+https://youtube.com/feeds/videos.xml?channel_id=UC5I2hjZYiW9gZPVkvzM8_Cw youtube "~YT: Techmoan" tech
+https://youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg youtube "~YT: DistroTube" tech linux
+https://youtube.com/feeds/videos.xml?channel_id=UC5ojdZG905jCpbdz12tl-jw youtube "~YT: Our Own Devices" tech
+https://youtube.com/feeds/videos.xml?channel_id=UC0UflzOybq16vw7b638_-pg youtube "~YT: Tech Time Traveller" tech
+https://youtube.com/feeds/videos.xml?channel_id=UC1ydE9gDHTdvbNVIgEKIKzw youtube "~YT: VWestlife" tech
+https://youtube.com/feeds/videos.xml?channel_id=UC0XNssyypOLiq4vVgXm9NtQ youtube "~YT: Life in Jars?"
+https://youtube.com/feeds/videos.xml?channel_id=UCsgnjvCvJZgAdSMMRG_j0cw youtube "~YT: Budget-Builds Official" tech
+https://youtube.com/feeds/videos.xml?channel_id=UC2I6Et1JkidnnbWgJFiMeHA youtube "~YT: Steve1989MREInfo"
+https://youtube.com/feeds/videos.xml?channel_id=UCw2SbtOH0K9AjQTbIRI6cqA youtube "~YT: shango066" tech
+https://youtube.com/feeds/videos.xml?channel_id=UCb0MyY46T9ZYOzDHkYnIoXg youtube "~YT: Plainly Difficult"
+https://youtube.com/feeds/videos.xml?channel_id=UC3cpN6gcJQqcCM6mxRUo_dA youtube "~YT: Wendigoon" religion
+https://youtube.com/feeds/videos.xml?channel_id=UC0symivYQ1qnUTjeaoQdArQ youtube "~YT: Nathan Karhu"
+https://youtube.com/feeds/videos.xml?channel_id=UCkpBmkoZ6yToHhB8uFDp46Q youtube "~YT: Father Spyridon" religion
+https://youtube.com/feeds/videos.xml?channel_id=UC3vIOVJiXigzVDA2TYqaa0Q youtube "~YT: Matt Whitman" religion

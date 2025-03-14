@@ -6,3 +6,10 @@
     update_cache: yes
   tags:
     - extras
+
+- name: Stow cli extras
+  shell: "stow -d {{ playbook_dir }}/../config -t ~/ -v --adopt {{ item }}"
+  loop: "{{ cli_extras_stow }}"
+  tags:
+    - extras
+    - config

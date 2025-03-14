@@ -42,6 +42,9 @@ cli_extras_packages:
   - fortune
   - gdb
   - gnuplot
+  - linuxlogo
+  - mpd
+  - ncmpcpp
   - neofetch
   - newsboat
   - npm
@@ -97,7 +100,5 @@ gui_base_packages:
 gui_extras_packages:
   - cups
   - mpv
-  - mpd
-  - ncmpcpp
   - wine
   - zathura

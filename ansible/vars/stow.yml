@@ -8,6 +8,9 @@ cli_base_stow:
   - top
   - zsh
 
+cli_extras_stow:
+  - newsboat
+
 gui_base_stow:
   - autorandr
   - fonts
