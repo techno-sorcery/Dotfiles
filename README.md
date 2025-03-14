@@ -7,7 +7,7 @@ Overview
 This is my set of personal Debian dotfiles, having been used in some form since 2023. Because they're tailored to my preferences, they're probably not a great fit for most out-of-the-box. However, they can serve as a good framework for others in making their own configurations. Some of the stand-out features are enumerated below:  
 - **Distro:** Debian  
 - **Shell:** zsh  
-- **Editor:** nvim  
+- **Editor:** [neovim](https://github.com/techno-sorcery/nvim)  
 - **Window Manager:** [dwm](https://github.com/techno-sorcery/dwm)  
 - **Status bar:** dwmblocks  
 - **Launcher:** rofi  
