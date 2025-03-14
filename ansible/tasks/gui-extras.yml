@@ -1,8 +1,8 @@
 - name: Install gui extras
-  become: yes
+  become: true
   apt:
     name: "{{ gui_extras_packages }}"
     state: present
-    update_cache: yes
+    update_cache: true
   tags:
     - gui-extras

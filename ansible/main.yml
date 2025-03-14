@@ -28,14 +28,14 @@
           deb-src http://deb.debian.org/debian/ {{ ansible_distribution_release }}-updates {{ apt_components }}
 
     - name: Upgrade package list
-      become: true
+    become: true
       apt:
         force_apt_get: true
         update_cache: true
         state: present
 
     - name: Install prerequisite packages
-      become: yes
+      become: true
       apt:
         name:
           - stow

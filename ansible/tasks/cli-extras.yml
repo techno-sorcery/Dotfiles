@@ -1,9 +1,9 @@
 - name: Install cli extras
-  become: yes
+  become: true
   apt:
     name: "{{ cli_extras_packages }}"
     state: present
-    update_cache: yes
+    update_cache: true
   tags:
     - extras
 
