@@ -31,6 +31,7 @@ The Ansible playbook includes the following tags, which can easily be excluded i
 - **extras:** Extra CLI components, per my preference
 - **gui:** Additional components supporting a GUI  
 - **gui-extras:** Extra GUI components, per my preference
+- **suckless:** All tasks pertaining to suckless software  
 - **flatpak:** All tasks pertaining to flatpak  
 - **flatpak-base:** A base flatpak installation  
 - **flatpak-extras:** Extra programs installed through flatpak  

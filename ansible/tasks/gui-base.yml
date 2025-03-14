@@ -13,6 +13,33 @@
   tags:
     - gui
 
+- name: Build dwm
+  make:
+    chdir: "{{ playbook_dir }}/../source/dwm"
+    target: install
+    become: yes
+  tags:
+    - gui
+    - suckless
+
+- name: Build st
+  make:
+    chdir: "{{ playbook_dir }}/../source/st"
+    target: install
+    become: yes
+  tags:
+    - gui
+    - suckless
+
+- name: Build dwmblocks
+  make:
+    chdir: "{{ playbook_dir }}/../source/dwmblocks"
+    target: install
+    become: yes
+  tags:
+    - gui
+    - suckless
+
 - name: Rebuild font cache
   shell: "fc-cache -f -v"
   tags:
