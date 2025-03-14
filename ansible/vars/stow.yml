@@ -10,11 +10,12 @@ cli_base_stow:
 
 cli_extras_stow:
   - newsboat
+  - mpd
 
 gui_base_stow:
   - autorandr
   - fonts
-  - mpd
   - picom
   - rofi
+  - wallpapers
   - x-windows
