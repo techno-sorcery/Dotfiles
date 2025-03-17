@@ -4,6 +4,3 @@
 [submodule "source/dwm"]
 	path = source/dwm
 	url = https://github.com/techno-sorcery/dwm
-[submodule "config/nvim/.config/nvim"]
-	path = config/nvim/.config/nvim
-	url = https://github.com/techno-sorcery/nvim
