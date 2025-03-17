@@ -30,7 +30,6 @@ cli_base_packages:
   - tree
   - unzip
   - wget
-  - xclip
   - zsh
 
 cli_extras_packages:
@@ -87,6 +86,7 @@ gui_base_packages:
   - x11-xkb-utils 
   - x11-xserver-utils
   - xcb 
+  - xclip
   - xcompmgr
   - xfonts-terminus
   - xinit

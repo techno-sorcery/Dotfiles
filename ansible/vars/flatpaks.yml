@@ -4,6 +4,7 @@ flatpak_base:
 flatpak_extras:
 
   # Multimedia
+  - com.calibre_ebook.calibre
   - com.spotify.Client
   - org.musicbrainz.Picard 
 
@@ -13,6 +14,9 @@ flatpak_extras:
   - org.libreoffice.LibreOffice 
   - org.shotcut.Shotcut
   - org.tenacityaudio.Tenacity
+
+  # Games
+  - org.gnome.Aisleriot
 
   # Programming
   - cc.arduino.IDE2

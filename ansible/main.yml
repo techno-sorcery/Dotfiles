@@ -3,10 +3,10 @@
 
   pre_tasks:
 
-    - name: Unstow programs
-      #shell: "for NAME in {{ playbook_dir }}/../config/*; do stow -d {{ playbook_dir }}/../config -t ~/ -D ${NAME#../config/}; done"
-      shell: "for NAME in {{ playbook_dir }}/../config/*; do echo ${NAME#../config/}; done"
-      ignore_errors: false
+    #- name: Unstow programs
+    #  #shell: "for NAME in {{ playbook_dir }}/../config/*; do stow -d {{ playbook_dir }}/../config -t ~/ -D ${NAME#../config/}; done"
+    #  shell: "for NAME in {{ playbook_dir }}/../config/*; do echo ${NAME#../config/}; done"
+    #  ignore_errors: false
 
     - name: Copy repo template
       vars:
