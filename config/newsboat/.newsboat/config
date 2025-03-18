@@ -5,7 +5,6 @@ browser "w3m %u"
 macro m set browser "mpv %u"; open-in-browser ; set browser "w3m %u"
 
 # unbind keys
-unbind-key ENTER
 unbind-key j
 unbind-key k
 unbind-key J
