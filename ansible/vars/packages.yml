@@ -101,3 +101,7 @@ gui_extras_packages:
   - mpv
   - wine
   - zathura
+
+thinkpad_packages:
+  - tlp
+  - upower

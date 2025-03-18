@@ -1,0 +1,8 @@
+- name: Copy xinput configs
+  become: true
+  copy:
+    src: "{{ playbook_dir }}/../assets/xinput/*"
+    dest: /usr/share/X11/xorg.conf.d
+    force: true
+  tags:
+    - xinput

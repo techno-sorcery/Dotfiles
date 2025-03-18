@@ -1,0 +1,15 @@
+- name: Install thinkpad packages
+  become: true
+  apt:
+    name: "{{ thinkpad_packages }}"
+    state: present
+    update_cache: true
+  tags:
+    - thinkpad
+
+- name: Set /etc/tlp.conf
+  become: true
+  copy:
+    src: "{{ playbook_dir }}/../assets/tlp.conf"
+    dest: /etc
+    force: true

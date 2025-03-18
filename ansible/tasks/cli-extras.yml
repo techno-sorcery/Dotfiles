@@ -12,3 +12,16 @@
   loop: "{{ cli_extras_stow }}"
   tags:
     - extras
+
+- name: Make newsboat data dir
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.local/share/newsboat"
+    state: directory
+    mode: 0755
+
+- name: Update /etc/orpierc
+  become: true
+  copy:
+    src: "{{ playbook_dir }}/../assets/orpierc"
+    dest: /etc
+    force: true

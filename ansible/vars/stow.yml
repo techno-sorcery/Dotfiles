@@ -1,5 +1,6 @@
 cli_base_stow:
   - bash
+  - fsh
   - grc
   - htop
   - nvim
@@ -11,6 +12,7 @@ cli_base_stow:
 cli_extras_stow:
   - newsboat
   - mpd
+  - npm
 
 gui_base_stow:
   - autorandr

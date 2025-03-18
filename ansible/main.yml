@@ -68,6 +68,8 @@
     - include: tasks/cli-extras.yml
     - include: tasks/gui-base.yml
     - include: tasks/gui-extras.yml
+    - include: tasks/thinkpad.yml
+    - include: tasks/xinput.yml
     - include: tasks/bluetooth.yml
     - include: tasks/flatpak.yml
     - include: tasks/kjv.yml
