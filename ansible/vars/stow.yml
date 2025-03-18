@@ -18,4 +18,4 @@ gui_base_stow:
   - picom
   - rofi
   - wallpapers
-  - x-windows
+  - xorg
