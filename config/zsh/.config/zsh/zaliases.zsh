@@ -8,6 +8,7 @@ alias ncal='ncal -b'
 alias top='htop'
 alias apt-get='apt'
 alias vim='nvim'
+alias wget='wget --hsts-file=~/.cache/.wget-hsts'
 
 alias flac2mp3='find * -depth -name "*.flac" -exec ffmpeg -i {} -codec:a libmp3lame -b:a 320k {}.mp3 \;'
 alias m4a2mp3=' find * -depth -name "*.m4a" -exec ffmpeg -i {} -codec:a libmp3lame -b:a 320k {}.mp3 \;'

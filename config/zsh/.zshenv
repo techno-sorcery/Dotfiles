@@ -8,6 +8,11 @@ export BG="/home/technomancer/Photos/wallpapers/antwerp_cathedral.png"
 export EDITOR="nvim"
 export TERM="st-256color"
 export PAGER='less -SsMJ +Gg -x4 -z-2 --use-color -DP15.12 -DS0.11 -DR0.1 -Dd205 -Du75'
+export W3M_DIR="$HOME/.config"
+
+# Xorg
+export XAUTHORITY="$HOME/.cache/Xauthority"
+export XINITRC="$HOME/.config/xorg/xinitrc"
 
 # java
 export _JAVA_AWT_WM_NONREPARENTING=1

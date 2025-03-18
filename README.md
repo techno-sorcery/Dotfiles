@@ -17,11 +17,11 @@ This is my set of personal Debian dotfiles, having been used in some form since 
 Installation
 ---
 ### Preparation
-These dotfiles are meant to be deployed on a base debian installation. As such, after connecting to the internet, you should run the following command as root to install its dependencies:  
+These dotfiles are meant to be deployed on a base debian installation. As such, after connecting to the internet, you should run the following command as root to install their dependencies:  
 
     apt install sudo ansible git
 
-Add yourself to the sudoers group if you haven't already (might be something different like "wheel" or "whirly-dirly thing" on other distros):  
+Add yourself to the sudoers group if you haven't already (might be something different like "wheel" or "whirly-dirly-thing" on other distros):  
 
     usermod -aG sudo [your username]
 
@@ -49,4 +49,4 @@ Go to the ansible folder within your new dotfiles folder, and run the following 
 
     ansible-playbook setup.yml --ask-become-pass
 
-Let ansible do its thing, and you're done. Feel free to exclude any of the aforementioned tags to ccustomize your installation.
+Let ansible do its thing, and you're done. Feel free to exclude any of the aforementioned tags to customize your installation.
