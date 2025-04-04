@@ -1,16 +1,12 @@
 ! Display
 Xft.dpi: 110
 
-
 ! Font
 *font: Terminus:size=10
-*rofifont: Terminus 10
 *user_bh: 0
-
 
 ! Colors
 *foreground: gray
-
 
 ! dwm appearance
 dwm*norm_fg: #dadada
@@ -30,3 +26,5 @@ dwm*gappiv: 6
 ! Theme
 Xcursor.theme: Adwaita
 Xcursor.size: 24
+
+dwm*roficonfig: ~/.config/rofi/dmenu_hidpi.rasi

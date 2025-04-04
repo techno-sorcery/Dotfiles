@@ -10,7 +10,7 @@
     border: 0;
     background-color:       black;
     text-color:             #dadada;
-  font:                   "Terminus 9";
+  font:                   "Terminus 12";
     border-color:           black;
 }
 window {
@@ -32,11 +32,11 @@ listview {
 entry {
     expand:     false;
     width:      10em;
-    padding: 2 5 1 0;
+    padding: 1 5 2 0;
 }
 
 element {
-    padding: 2 5 1 5;
+    padding: 1 5 2 5;
     margin: 0px;
 }
 
@@ -52,6 +52,6 @@ element-text {
 
 
 prompt {
-    padding: 2 5 1 0;
+    padding: 1 5 2 0;
 }
 

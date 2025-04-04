@@ -2,13 +2,12 @@
 
 # Misc
 export MAIN_USER="$USER"
-export BG="/home/technomancer/Photos/wallpapers/antwerp_cathedral.png"
+export BG="/home/technomancer/Photos/wallpapers/antwerp_cathedral.jpg"
 
 # Programs
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cacheshare"
-
 
 export EDITOR="nvim"
 export TERM="st-256color"
@@ -23,6 +22,8 @@ export NODE_REPL_HISTORY=""
 
 export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
 export ANSIBLE_HOME="$XDG_DATA_HOME/ansible"
+
+export ROFI_PATH="~/.config/rofi/dmenu.rasi"
 
 # Xorg
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"

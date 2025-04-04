@@ -9,3 +9,5 @@ Xft.dpi: 90
 
 ! Cursor
 Xcursor.size: 12
+
+dwm*roficonfig: ~/.config/rofi/dmenu_hidpi.rasi
