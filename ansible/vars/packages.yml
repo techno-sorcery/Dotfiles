@@ -44,6 +44,7 @@ cli_extras_packages:
   - linuxlogo
   - mpd
   - ncmpcpp
+  - ncurses-doc
   - neofetch
   - newsboat
   - npm

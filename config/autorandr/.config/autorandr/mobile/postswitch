@@ -1,6 +1,6 @@
 #!/bin/sh
 pkill xcompmgr
 sleep 0.1
-picom --experimental-backends &
+picom &
 hsetroot -cover $BG
 xrdb -merge ~/.Xresources

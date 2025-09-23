@@ -7,7 +7,7 @@ static const Block blocks[] = {
 	{1,             "",	"tb-tmux",	        2,	    3},
 	/* {1,             "",	"tb-thermal",	    2,	    3}, */
 	/* {1,             "",	"tb-memory",	    2,	    6}, */
-	/* {1,             "",	"tb-disk",	    2,	    3}, */
+	{1,             "",	"tb-disk",	    2,	    3},
 	{1,             "",	"tb-network",	    5,	    11},
 	{1,             "",	"tb-power",	        5,	    4},
 	{1,             "",	"tb-brightness",	0,	    2},
