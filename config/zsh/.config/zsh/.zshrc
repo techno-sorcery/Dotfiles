@@ -22,6 +22,13 @@ source "/usr/share/doc/fzf/examples/key-bindings.zsh"
 source "$ZDOTDIR/plugins/romkatv/gitstatus/gitstatus.prompt.zsh"
 
 
+# Custom highlighting theme
+if ! fast-theme -s | grep -q cool; then
+    cp "$ZDOTDIR/cool.ini" "$ZDOTDIR/plugins/zdharma-continuum/fast-syntax-highlighting/themes"
+    fast-theme -t cool
+fi
+
+
 # Autosuggest bindings
 bindkey '^[[Z' autosuggest-accept
 

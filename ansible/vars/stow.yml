@@ -21,3 +21,6 @@ gui_base_stow:
   - rofi
   - wallpapers
   - xorg
+
+gui_extras_stow:
+  - zathura

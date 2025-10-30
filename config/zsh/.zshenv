@@ -42,6 +42,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_DATA_HOME/history"
 export HISTSIZE=1000
 export SAVEHIST=1000
+export ZTHEME="cool"
 
 # Paths
 export XDG_DATA_DIRS="/usr/local/share/:/usr/share/:/var/lib/flatpak/exports/share"
