@@ -12,6 +12,10 @@ elif [[ $strength -gt 75 ]] ; then
     icon1="󰤨"
 elif [[ $strength -gt 50 ]] ; then
     icon1="󰤥"
+elif [[ $strength -gt 25 ]] ; then
+    icon1="󰤢"
+else
+    icon1="󰤟"
 fi
 
 # Output
