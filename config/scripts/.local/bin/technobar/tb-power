@@ -26,16 +26,34 @@ fi
 
 # Charge icon
 if [[ !(-d "/sys/class/power_supply/BAT0") ]] ; then
-    icon1="🚫"
+    icon1="󰂃"
     sym=""
     time=""
 elif [[ $state == "Charging" ]] ; then
-    icon1="🔌"
+    icon1="󰂄"
 else
-    if [[ $batt -le 25 ]] ; then
-        icon1="🪫"
-    else
-        icon1="🔋"
+    if [[ $batt -gt 98 ]] ; then
+        icon1="󰁹"
+    elif [[ $batt -gt 90 ]] ; then
+        icon1="󰂂"
+    elif [[ $batt -gt 80 ]] ; then
+        icon1="󰂁"
+    elif [[ $batt -gt 70 ]] ; then
+        icon1="󰂀"
+    elif [[ $batt -gt 60 ]] ; then
+        icon1="󰁿"
+    elif [[ $batt -gt 50 ]] ; then
+        icon1="󰁾"
+    elif [[ $batt -gt 40 ]] ; then
+        icon1="󰁽"
+    elif [[ $batt -gt 30 ]] ; then
+        icon1="󰁼"
+    elif [[ $batt -gt 20 ]] ; then
+        icon1="󰁻"
+    elif [[ $batt -gt 10 ]] ; then
+        icon1="󰁺"
+    else 
+        icon1="󰂎"
     fi
 fi
 

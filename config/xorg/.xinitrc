@@ -8,6 +8,7 @@
 #. /etc/X11/Xsession
 
 xss-lock -- i3lock -i /home/$USER/Photos/wallpapers/thinkchad.png -t &
+picom&
 xrdb -merge  ~/.Xresources
 numlockx on
 setxkbmap -option caps:swapescape
