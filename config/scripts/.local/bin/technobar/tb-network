@@ -2,14 +2,17 @@
 
 # Mem
 # ssid="$(nmcli con show | awk '/wlp4s0/ {print $1}')"
-ssid="$(sudo iwgetid -r | sed 's/\(.\{10\}\).*/\1.../')"
+ssid="$(sudo iwgetid -r | sed 's/\(.\{5\}\).*/\1.../')"
+strength="$(awk 'NR==3 {print int($3 * 100 / 70)}' /proc/net/wireless)"
 
 if [[ ${#ssid} == 0 ]] ; then
-    icon1="🚫"
+    icon1="󰤭"
     ssid=""
-else
-    icon1="🛜"
+elif [[ $strength -gt 75 ]] ; then
+    icon1="󰤨"
+elif [[ $strength -gt 50 ]] ; then
+    icon1="󰤥"
 fi
 
 # Output
-echo $icon1 $ssid
+echo "$icon1  $ssid"
