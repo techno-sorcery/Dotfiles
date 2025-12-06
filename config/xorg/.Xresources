@@ -17,7 +17,7 @@ dwm*sel_fg: #dadada
 dwm*sel_bg: #555555
 dwm*sel_border: #a8a8a8
 
-dwm*borderpx: 4
+dwm*borderpx: 3
 
 dwm*gappih: 6
 dwm*gappiv: 6

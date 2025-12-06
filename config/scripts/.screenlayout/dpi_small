@@ -1,5 +1,5 @@
 ! Display
-Xft.dpi: 90
+Xft.dpi: 95
 
 ! dwm appearance
 *user_bh: 2
@@ -10,4 +10,4 @@ Xft.dpi: 90
 ! Cursor
 Xcursor.size: 12
 
-dwm*roficonfig: ~/.config/rofi/dmenu_hidpi.rasi
+!dwm*roficonfig: ~/.config/rofi/dmenu_hidpi.rasi

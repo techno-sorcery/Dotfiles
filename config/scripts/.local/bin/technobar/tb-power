@@ -5,23 +5,31 @@ batt="$(cat /sys/class/power_supply/BAT0/capacity)"
 state="$(cat /sys/class/power_supply/BAT0/status)"
 time_raw="$(upower --dump | grep -m1 'time to')"
 
-time="$(echo $time_raw | awk '{print $4}')"
-UNITS="$(echo $time_raw | awk '{print $5}')"
+# If time_raw is empty, blank time + UNITS; otherwise parse normally
+if [[ -z "$time_raw" ]]; then
+    time=""
+    UNITS=""
+else
+    time="$(echo "$time_raw" | awk '{print $4}')"
+    UNITS="$(echo "$time_raw" | awk '{print $5}')"
+fi
+
 sym="%"
 
-
 # Time
-if [[ ${#time} -gt 1 ]] ; then
+if [[ -n "$time" && ${#time} -gt 1 ]] ; then
     time=", $time"
 fi
 
 # Units
-if [ $UNITS == "hours" ]; then
-    UNITS="hrs"
-elif [ $UNITS == "hours" ]; then
-    UNITS="hr"
-else
-    UNITS="mins"
+if [[ -n "$UNITS" ]]; then
+    if [[ $UNITS == "hours" ]]; then
+        UNITS="hrs"
+    elif [[ $UNITS == "hour" ]]; then
+        UNITS="hr"
+    else
+        UNITS="mins"
+    fi
 fi
 
 # Charge icon

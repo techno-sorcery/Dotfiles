@@ -1,8 +1,5 @@
 #!/bin/sh
 
-pkill picom
-pkill xcompmgr
-xcompmgr &
-light -S 100
+light -S 80
 hsetroot -fill $BG
 xrdb -merge ~/.screenlayout/dpi_small
