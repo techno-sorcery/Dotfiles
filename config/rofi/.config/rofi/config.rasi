@@ -4,7 +4,7 @@ configuration {
 	font: "SF Pro Text 13";
     background: "rgba (0, 0, 0, 100%)";
 	show-icons: true;
-	terminal: "rofi-sensible-terminal st";
+	terminal: "st";
 	sort: true;
 	sorting-method: "fzf";
 
@@ -28,6 +28,7 @@ configuration {
 * {
 	transparent: #00000000;
     foreground: #F2F2F2EE;
+    foreground-selected: #F2F2F2EE;
 	background-selected: #F2F2F245;
 	background-active: #F2F2F230;
 	background-white: #F2F2F211;

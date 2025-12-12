@@ -30,7 +30,7 @@ rate 59.95
 x-prop-non_desktop 0
 output eDP-1
 crtc 0
-mode 1600x900
+mode 1368x768
 pos 1920x300
 primary
 rate 59.95

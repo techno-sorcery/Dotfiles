@@ -6,16 +6,16 @@ ssid="$(sudo iwgetid -r | sed 's/\(.\{8\}\).*/\1.../')"
 strength="$(awk 'NR==3 {print int($3 * 100 / 70)}' /proc/net/wireless)"
 
 if [[ ${#ssid} == 0 ]] ; then
-    icon1="󰤭"
+    icon1="󰤭 "
     ssid=""
 elif [[ $strength -gt 75 ]] ; then
-    icon1="󰤨"
+    icon1="󰤨 "
 elif [[ $strength -gt 50 ]] ; then
-    icon1="󰤥"
+    icon1="󰤥 "
 elif [[ $strength -gt 25 ]] ; then
-    icon1="󰤢"
+    icon1="󰤢 "
 else
-    icon1="󰤟"
+    icon1="󰤟 "
 fi
 
 # Output

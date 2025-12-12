@@ -7,12 +7,20 @@
 # invoke global X session script
 #. /etc/X11/Xsession
 
-xss-lock -- i3lock -i /home/$USER/Photos/wallpapers/thinkchad.png -t &
-picom&
+# sleep 0.1
+
+# Graphics
+xss-lock -- i3lock -i /home/$USER/Photos/wallpapers/Jaded.png -t &
+picom &
+hsetroot -cover $BG
 xrdb -merge  ~/.Xresources
+autorandr -c
+
+# Input
 numlockx on
 setxkbmap -option caps:swapescape
+
 dwmblocks &
 st &
-autorandr -c
+
 exec dbus-run-session -- dwm

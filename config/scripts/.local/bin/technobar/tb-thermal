@@ -2,7 +2,7 @@
 
 # Temp
 sense="$(sensors > ~/.cache/techno_therm)"
-temp="$(echo | awk '/CPU:/ {print substr($2,2,2)}' ~/.cache/techno_therm)"
+temp="$(sensors | awk '/CPU:/ {print substr($2,2,2)}')"
 # if [[ $temp -lt 60 ]] ; then
 icon1="🌡️"
 # elif [[ $temp -ge 60 && $temp -lt 80 ]] ; then

@@ -1,0 +1,2 @@
+#!/bin/sh
+st -e sh -c '"$@"; echo; printf "Press Enter to exit... "; read _' sh "$@"
