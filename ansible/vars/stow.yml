@@ -10,12 +10,13 @@ cli_base_stow:
   - zsh
 
 cli_extras_stow:
-  - newsboat
-  - mpd
+  # - newsboat
+  # - mpd
   - npm
 
 gui_base_stow:
   - autorandr
+  - dunst
   - fonts
   - picom
   - rofi

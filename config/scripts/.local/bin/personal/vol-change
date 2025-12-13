@@ -1,0 +1,20 @@
+#!/bin/bash
+
+pulsemixer --change-volume $1
+pkill -RTMIN+2 dwmblocks
+
+VOL="$(amixer get Master | awk '/Left:/ {print substr($5, 2, length($5)-3)}' )"
+POWER="$(amixer get Master | awk '/Left:/ {print $6}')"
+
+if [ $POWER == [off] ] ; then
+    ICON="audio-volume-muted-symbolic"
+    VOL="0"
+elif [[ $VOL -ge 66 ]] ; then
+    ICON="audio-volume-high-symbolic"
+elif [[ $VOL -ge 33 ]] ; then
+    ICON="audio-volume-medium-symbolic"
+else
+    ICON="audio-volume-low-symbolic"
+fi
+
+notify-send "Volume: $VOL%" -i $ICON -h int:value:$VOL -r 10 -t 3000

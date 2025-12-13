@@ -34,7 +34,7 @@ cli_base_packages:
 
 cli_extras_packages:
   - cowsay
-  - bsdgames
+  # - bsdgames
   - dict-gcide
   - dict-wn
   - dictd
@@ -42,23 +42,24 @@ cli_extras_packages:
   - gdb
   - gnuplot
   - linuxlogo
-  - mpd
-  - ncmpcpp
+  # - mpd
+  # - ncmpcpp
   - ncurses-doc
   - neofetch
-  - newsboat
+  # - newsboat
   - npm
   - orpie
   - pandoc
   - python3-matplotlib
   - texlive-full
   - valgrind
-  - vite
+  # - vite
 
 gui_base_packages:
   - alsa-utils
   - arandr
   - autorandr
+  - dunst
   - feh
   - fonts-noto-color-emoji
   - hsetroot
@@ -75,6 +76,7 @@ gui_base_packages:
   - libxkbcommon-x11-dev 
   - libxrandr-dev
   - libxtst-dev
+  - notify-osd
   - numlockx
   - pavucontrol
   - picom
