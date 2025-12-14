@@ -22,7 +22,7 @@ setxkbmap -option caps:swapescape
 
 dwmblocks &
 st &
-/usr/lib/notify-osd/notify-osd &
+dunst &
 
 
 exec dbus-run-session -- dwm

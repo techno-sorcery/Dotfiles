@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+if [[ $1 -gt 0 ]] ; then
+    light -A $1
+else
+    light -U $(($1 * -1))
+fi
+
+pkill -RTMIN+2 dwmblocks
+
+BRIGHT="$(light -G | cut -d "." -f 1)"
+ICON="display-brightness-symbolic"
+
+notify-send "Brightness: $BRIGHT%" -i $ICON -h int:value:$BRIGHT -r 10 -t 3000

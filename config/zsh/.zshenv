@@ -14,7 +14,7 @@ export TERM="st-256color"
 export PAGER='less -SsMJ +Gg -x4 -z-2 --use-color -DP15.12 -DS0.11 -DR0.1 -Dd205 -Du75'
 
 export W3M_DIR="$XDG_CONFIG_HOME/w3m"
-export MBSYNCRC="$XDG_CONFIG_HOME/mbsync/mbsyncrc"
+# export MBSYNCRC="$XDG_CONFIG_HOME/mbsync/mbsyncrc"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
@@ -24,6 +24,21 @@ export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
 export ANSIBLE_HOME="$XDG_DATA_HOME/ansible"
 
 export ROFI_PATH="~/.config/rofi/dmenu.rasi"
+
+# dwm
+export DWM_VOL_UP="vol-change +5"
+export DWM_VOL_DOWN="vol-change -5"
+export DWM_VOL_MUTE="vol-change 0"
+
+export DWM_BRIGHT_UP="bright-change 10"
+export DWM_BRIGHT_DOWN="bright-change -10"
+
+export DWM_SCREENSHOT="scrot -s -f /home/$USER/Photos/screenshots/%Y-%m-%d_%H:%M:%S.png"
+export DWM_SCREENSHOT_FULL="scrot /home/$USER/Photos/screenshots/%Y-%m-%d_%H:%M:%S.png"
+
+export DWM_CALCULATOR="st -t orpie -e orpie"
+export DWM_BROWSER="flatpak run com.vivaldi.Vivaldi"
+export DWM_MESSENGER="flatpak run org.signal.Signal"
 
 # Xorg
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"

@@ -1,6 +1,12 @@
 #!/bin/bash
 
-pulsemixer --change-volume $1
+
+if [[ $1 = 0 ]] ; then
+    pulsemixer --toggle-mute
+else
+    pulsemixer --change-volume $1
+fi
+
 pkill -RTMIN+2 dwmblocks
 
 VOL="$(amixer get Master | awk '/Left:/ {print substr($5, 2, length($5)-3)}' )"
