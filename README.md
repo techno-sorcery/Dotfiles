@@ -12,7 +12,7 @@ This is my set of personal Debian dotfiles, having been used in some form since 
 - **Status bar:** dwmblocks  
 - **Launcher:** rofi  
 - **Terminal Emulator:** [st](https://github.com/techno-sorcery/st)  
-- **Font:** Terminus  
+- **Font:** SF Pro Text  
 
 Installation
 ---
