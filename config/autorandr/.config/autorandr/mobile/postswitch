@@ -1,4 +1,4 @@
 #!/bin/sh
-sleep 0.1
-hsetroot -cover $BG
 xrdb -merge ~/.Xresources
+autorandr-post
+

@@ -1,5 +1,6 @@
 #!/bin/sh
 
 light -S 80
-hsetroot -fill $BG
 xrdb -merge ~/.screenlayout/dpi_small
+
+autorandr-post

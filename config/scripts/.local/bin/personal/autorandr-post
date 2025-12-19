@@ -1,0 +1,5 @@
+#!/bin/bash
+
+hsetroot -cover $BG
+pkill dunst
+dunst &
