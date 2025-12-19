@@ -4,6 +4,24 @@
 batt="$(cat /sys/class/power_supply/BAT0/capacity)"
 state="$(cat /sys/class/power_supply/BAT0/status)"
 time_raw="$(upower --dump | grep -m1 'time to')"
+LAST_BATT_FILE="$HOME/.cache/last_batt"
+
+# Read last battery value, default to 100 if file doesn't exist
+if [ -f "$LAST_BATT_FILE" ]; then
+    LAST_BATT=$(<"$LAST_BATT_FILE")
+else
+    LAST_BATT=100
+fi
+
+# Display low battery warning
+if [ "$batt" -le 20 ] && [ "$LAST_BATT" -gt 20 ]; then
+    notify-send "Low battery warning" "Consider plugging into a charger" -i battery-caution-symbolic -r 11 -t 3000 -c "power"
+elif [ "$batt" -le 5 ] && [ "$LAST_BATT" -gt 5 ]; then
+    notify-send "Critical battery warning" "Please plug into a charger" -i battery-action-symbolic -r 11 -t 3000 -c "power"
+fi
+
+# Cache last value
+echo "$batt" > ~/.cache/last_batt
 
 # If time_raw is empty, blank time + UNITS; otherwise parse normally
 if [[ -z "$time_raw" ]]; then

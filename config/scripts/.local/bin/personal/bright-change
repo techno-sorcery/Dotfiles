@@ -12,4 +12,4 @@ pkill -RTMIN+2 dwmblocks
 BRIGHT="$(light -G | cut -d "." -f 1)"
 ICON="display-brightness-symbolic"
 
-notify-send "Brightness: $BRIGHT%" -i $ICON -h int:value:$BRIGHT -r 10 -t 3000
+notify-send "Brightness: $BRIGHT%" -i $ICON -h int:value:$BRIGHT -r 10 -t 3000 -c "adjust"
