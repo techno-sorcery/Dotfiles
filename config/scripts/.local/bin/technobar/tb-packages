@@ -7,5 +7,5 @@ icon1="📦"
 
 # Output
 # echo $icon1 $(($total - 1)), ⬆️ $(($upgradable - 1))
-echo ⬆️ $(($upgradable - 1))
+echo "  $(($upgradable - 1))"
 # echo $icon1 $(($upgradable - 1))

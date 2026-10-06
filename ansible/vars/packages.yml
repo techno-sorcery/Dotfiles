@@ -24,6 +24,7 @@ cli_base_packages:
   - p7zip-full
   - pass
   - pipx
+  - rar
   - ssh
   - stow
   - sudo
@@ -62,6 +63,7 @@ gui_base_packages:
   - dunst
   - feh
   - fonts-noto-color-emoji
+  - gnome-icon-theme
   - hsetroot
   - i3lock
   - libsdl2-image-2.0-0 
@@ -77,6 +79,7 @@ gui_base_packages:
   - libxrandr-dev
   - libxtst-dev
   - notify-osd
+  - nm-connection-editor
   - numlockx
   - pavucontrol
   - picom

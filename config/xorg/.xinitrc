@@ -12,6 +12,7 @@
 # Graphics
 xss-lock -- i3lock -i /home/$USER/Photos/wallpapers/Jaded.png -t &
 picom &
+xcorners -b -r 10 &
 hsetroot -cover $BG
 xrdb -merge  ~/.Xresources
 autorandr -c
@@ -23,6 +24,8 @@ setxkbmap -option caps:swapescape
 dwmblocks &
 st &
 dunst &
+vivaldi-stable &
+thunderbird &
 
+exec dbus-run-session -- dwm 
 
-exec dbus-run-session -- dwm

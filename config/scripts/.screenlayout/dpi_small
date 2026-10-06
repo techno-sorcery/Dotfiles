@@ -1,5 +1,5 @@
 ! Display
-Xft.dpi: 95
+Xft.dpi: 100
 
 ! dwm appearance
 *user_bh: 2

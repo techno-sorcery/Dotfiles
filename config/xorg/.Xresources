@@ -1,5 +1,5 @@
 ! Display
-Xft.dpi: 110
+Xft.dpi: 120
 
 ! Font
 *font: Terminus:size=10

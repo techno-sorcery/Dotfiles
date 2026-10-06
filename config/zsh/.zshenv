@@ -3,6 +3,8 @@
 # Misc
 export MAIN_USER="$USER"
 export BG="/home/technomancer/Photos/wallpapers/antwerp_cathedral.png"
+export XDG_CURRENT_DESKTOP="GTK"
+
 
 # Programs
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -11,10 +13,12 @@ export XDG_CACHE_HOME="$HOME/.cacheshare"
 
 export EDITOR="nvim"
 export TERM="st-256color"
-export PAGER='less -SsMJ +Gg -x4 -z-2 --use-color -DP15.12 -DS0.11 -DR0.1 -Dd205 -Du75'
+export MANPAGER='less -R --wordwrap -sM +Gg -x4 -z-2 --use-color -DP15.12 -DS0.11 -DR0.1 -Dd205 -Du75'
+export PAGER='less -R --wordwrap -sM +Gg -x4 -z-2 --use-color -DP15.12 -DS0.11 -DR0.1 -Dd205 -Du75'
+export MANROFFOPT="-c"
+
 
 export W3M_DIR="$XDG_CONFIG_HOME/w3m"
-# export MBSYNCRC="$XDG_CONFIG_HOME/mbsync/mbsyncrc"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
@@ -37,8 +41,9 @@ export DWM_SCREENSHOT="scrot -s -f /home/$USER/Photos/screenshots/%Y-%m-%d_%H:%M
 export DWM_SCREENSHOT_FULL="scrot /home/$USER/Photos/screenshots/%Y-%m-%d_%H:%M:%S.png"
 
 export DWM_CALCULATOR="st -t orpie -e orpie"
-export DWM_BROWSER="flatpak run com.vivaldi.Vivaldi"
+export DWM_BROWSER="vivaldi-stable"
 export DWM_MESSENGER="flatpak run org.signal.Signal"
+export DWM_MAIL="thunderbird"
 
 # Xorg
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
