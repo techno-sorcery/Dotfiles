@@ -84,4 +84,4 @@ else
 fi
 
 # Output
-echo $icon1 $batt$sym$time $UNITS
+echo "$icon1 $batt$sym"

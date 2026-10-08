@@ -12,11 +12,13 @@ static const Block blocks[] = {
 	{1,             "",	"tb-network",	    5,	    11},
 	{1,             "",	"tb-power",	        5,	    4},
 	{1,             "",	"tb-brightness",	0,	    2},
+	{1,             "",	"tb-volume",	1,	    2},
 	{1,             "",	"tb-time",	        10,	    1},
 };
 
 //Sets delimiter between status commands. NULL character ('\0') means no delimiter.
-static char *delim = "  |  ";
+// static char *delim = "  |  ";
+static char *delim = "      ";
 
 // Sets padding to left and right of status output
 static char *l_padding = " ";

@@ -10,17 +10,14 @@ Xft.dpi: 120
 
 ! dwm appearance
 dwm*norm_fg: #dadada
-dwm*norm_bg: #0a0a0a
+dwm*norm_bg: #000000
 dwm*norm_border: #555555
 
 dwm*sel_fg: #dadada
-dwm*sel_bg: #555555
-dwm*sel_border: #a8a8a8
+dwm*sel_bg: #252525
+dwm*sel_border: #a0a0a0
 
-dwm*borderpx: 3
-
-dwm*gappih: 6
-dwm*gappiv: 6
+dwm*borderpx: 4
 
 ! Theme
 Xcursor.theme: Adwaita

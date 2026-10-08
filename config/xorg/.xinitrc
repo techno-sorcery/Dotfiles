@@ -7,15 +7,23 @@
 # invoke global X session script
 #. /etc/X11/Xsession
 
-# sleep 0.1
-
 # Graphics
 xss-lock -- i3lock -i /home/$USER/Photos/wallpapers/Jaded.png -t &
 picom &
-xcorners -b -r 10 &
 hsetroot -cover $BG
 xrdb -merge  ~/.Xresources
 autorandr -c
+
+xcorners -b -r 15 &
+(
+    while true; do
+        # Search for xcorners and explicitly raise it above everything every 0.5 seconds
+        if xdotool search --class "xcorners" >/dev/null 2>&1; then
+            xdotool search --class "xcorners" windowraise
+        fi
+        sleep 1
+    done
+) &
 
 # Input
 numlockx on
@@ -23,7 +31,7 @@ setxkbmap -option caps:swapescape
 
 dwmblocks &
 st &
-dunst &
+# dunst &
 vivaldi-stable &
 thunderbird &
 

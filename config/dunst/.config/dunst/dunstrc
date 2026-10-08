@@ -69,7 +69,7 @@
     progress_bar_max_width = 300
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 4
+    progress_bar_corner_radius = 15
 
     # Define which corners to round when drawing the progress bar. If progress_bar_corner_radius
     # is set to 0 this option will be ignored.
@@ -89,7 +89,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 25
+    transparency = 0
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -271,7 +271,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 15
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.
@@ -348,7 +348,7 @@
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#0a0a0a"
+    background = "#0a0a0a80"
     foreground = "#ffffff"
     timeout = 10
     override_pause_level = 30
